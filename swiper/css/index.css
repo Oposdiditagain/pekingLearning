@@ -1,0 +1,24 @@
+.swiper-container{
+  width: 600px;
+  height: 300px;
+}
+.swiper-slide{
+  background: yellowgreen;
+  font-size: 50px;
+}
+.swiper-slide:nth-of-type(1){
+  background: yellowgreen;
+  font-size: 50px;
+}
+.swiper-slide:nth-of-type(2){
+  background: yellow;
+  font-size: 50px;
+}
+.swiper-slide:nth-of-type(3){
+  background: red;
+  font-size: 50px;
+}
+
+.swiper-button-pre{
+  display: none;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>swiper</title>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">Slide 1</div>
+	        <div class="swiper-slide">Slide 2</div>
+	        <div class="swiper-slide">Slide 3</div>
+	        <!-- <div class="title" data-swiper-parallax="-100">从右边100px开始进入</div>
+            <div class="subtitle" data-swiper-parallax="-200">从右边200px开始进入</div>
+            <div class="text" data-swiper-parallax="-300" data-swiper-parallax-duration="600">
+              <p>从右边300px开始进入，时间600ms</p>
+            </div>
+            <div data-swiper-parallax="0" data-swiper-parallax-opacity="0.5" >透明度变化</div>
+            <div data-swiper-parallax-scale="0.15" >缩放变化</div> -->
+	    </div>
+
+    
+</div>
+	
+	
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container',{
+			initialSlide : 1,
+			// 滑动方向 direction
+			// 垂直的：vertical 
+			// 水平的 : horizontal
+			direction:"horizontal",
+
+			// 滑动速度 speed
+			speed : 400,
+			// 抓取的指针样式 grabCursor
+			
+		})
+	</script>
+</body>
+</html>
