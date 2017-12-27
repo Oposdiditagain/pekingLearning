@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Application Demo</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+						<!-- My note book -->
+<body ng-app="myApp">
+	<div class="note"  ng-controller="myCtrl">
+		<h2>我的笔记</h2>
+		<textarea cols="50" rows="20" ng-model="input"></textarea><br>
+		<p>
+			<button ng-click="save()">Save</button>
+			<button ng-click="clear()">Clear</button>
+		</p>
+		<h3>剩余字数:{{left()}}</h3>
+	</div>
+
+	<script type="text/javascript" src="myApp.js"></script>
+	<script type="text/javascript" src="myCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- http</title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="siteCtrl">
+		<ul>
+			<li ng-repeat="x in sites">{{x.Name + ',' + x.Country}}</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("siteCtrl",function($scope,$http){
+			$http({
+				method:'GET',
+				url:'data.php'
+			}).then(function successCallBack(response){
+				$scope.sites = response.data.sites;
+			},function(err){
+				console.log("Error");
+			});
+		});
+	</script>
+</body>
+</html>

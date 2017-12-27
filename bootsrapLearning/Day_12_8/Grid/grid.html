@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- grid</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+
+</head>
+<body>
+	
+	<div class="container">
+		<div class="col-xs-6 col-sm-3"
+			 style="background-color: #dedef8;
+            box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+		<div class="col-xs-6 col-sm-3"
+			style="background-color: #dedef8;box-shadow: 
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut. 
+            </p>
+		</div>
+
+		<!-- <div class="clearfix visible-xs"></div> -->
+
+		<div class="col-xs-6 col-sm-3"
+			 style="background-color: #dedef8;
+        box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. 
+            </p>
+        </div>
+        <div class="col-xs-6 col-sm-3" 
+        style="background-color: #dedef8;box-shadow: 
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim 
+            </p>
+		</div>
+
+		
+
+	</div>
+
+	<div class="container">
+		<h2>偏移列</h2>
+		<div class="row">
+			<div class="col-xs-6 col-md-offset-3"
+				 style="background-color: #dedef8;box-shadow: 
+                 inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+            elit.
+            </p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2>嵌套列</h2>
+		<!-- 
+			为了在内容中嵌套默认的网格，请添加一个新的 .row，并在一个已有的 .col-md-* 列内添加一组 .col-md-* 列。被嵌套的行应包含一组列，这组列个数不能超过12（其实，没有要求你必须占满12列）。 
+		-->
+		<div class="row">
+	        <div class="col-md-3" style="background-color: #dedef8;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	            <h4>第一列</h4>
+	            <p>
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	            </p>
+	        </div>
+	        <div class="col-md-9" style="background-color: #dedef8;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	            <h4>第二列 - 分为四个盒子</h4>
+	            <div class="row">
+	                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	                    <p>
+	                        Consectetur art party Tonx culpa semiotics. Pinterest 
+	        				assumenda minim organic quis.
+	                    </p>
+	                </div>
+	                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	                    <p>
+	                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+					        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+					        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	                    <p>
+	                        quis nostrud exercitation ullamco laboris nisi ut 
+	        				aliquip ex ea commodo consequat.
+	                    </p>
+	                </div>
+	                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+	                    <p>
+	                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+	        				sed do eiusmod tempor incididunt ut labore et dolore magna 
+	        				aliqua. Ut enim ad minim.
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+    	</div>
+	</div>
+
+	<div class="container">
+		<h2>列排序</h2>
+		<!-- 
+		您可以很轻易地改变带有 .col-md-push-* 和 .col-md-pull-* 类的内置网格列的顺序，其中 * 范围是从 1 到 11。
+		在下面的实例中，我们有两列布局，左列很窄，作为侧边栏。我们将使用 .col-md-push-* 和 .col-md-pull-* 类来互换这两列的顺序。 
+		-->
+		<div class="row">
+        <p>
+            排序前
+        </p>
+        <div class="col-md-4" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         我在左边
+        </div>
+        <div class="col-md-8" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         我在右边
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <p>
+            排序后
+        </p>
+        <div class="col-md-4 col-md-push-8" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         我在左边
+        </div>
+        <div class="col-md-8 col-md-pull-4" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         我在右边
+        </div>
+    </div>
+	</div>
+
+	<script type="text/javascript" src="../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

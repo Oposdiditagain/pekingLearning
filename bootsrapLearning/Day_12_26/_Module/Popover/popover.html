@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- Popover</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../bootrap.min.js"></script>
+</head>
+<body>
+	<div class="container" style="padding: 100px 50px 10px 300px;">
+		<button type="button" class="btn btn-default popover-show"
+				title="Popover title" data-container="body" data-toggle="popover" 
+				data-placement="left" data-content="左侧的 Popover 中的一些内容 —— show">
+			左侧的Popover
+		</button>
+		<button type="button" class="btn btn-primary popover-hide"
+				title="Popover title" data-toggle="popover" data-placement="top"
+				data-container="body" data-content="顶部 Popover 中的一些内容 —— hide">
+			右侧的Popover
+		</button>
+		<button type="button" class="btn btn-warning popover-destroy"
+				title="Popover title" data-toggle="popover" data-placement="right"
+				data-container="body" data-content="右侧的 Popover 中的一些内容 —— destroy">
+			顶部的Popover</button>
+		<button type="button" class="btn btn-danger popover-toggle"
+				title="Popover title" data-toggle="popover" data-placement="bottom"
+				data-container="body" data-content="底部的 Popover 中的一些内容 —— bottom">
+			底部的的Popover</button>
+		<br><br><br><br><br><br>
+		<p class="popover-options">
+			<a href="#" type="button" class="btn btn-warning" title="<h2>Title</h2>"  
+			    data-container="body" data-toggle="popover" 
+			    data-content="<h4>Popover 中的一些内容 —— options 方法</h4>">
+				Popover
+			</a>
+		</p>
+	</div>
+
+	<script type="text/javascript">
+
+		$(function() { $('.popover-show').popover('show'); });
+		$(function() { $('.popover-hide').popover('hide'); });
+		$(function() { $('.popover-destroy').popover('destroy'); });
+		$(function() { $('.popover-toggle').popover('toggle'); });
+		$(function() { $('.popover-options a').popover({html:true}); });
+	</script>
+</body>
+</html>

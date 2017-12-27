@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- Nav</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../bootrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>标签式的导航菜单</h2>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Photo</a></li>
+			<li><a href="#">Tel</a></li>
+			<li><a href="#">Zone</a></li>
+			<li><a href="#">Article</a></li>
+		</ul>
+	
+		<!-- 胶囊式导航菜单 -->
+		<ul class="nav nav-pills">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Photo</a></li>
+			<li><a href="#">Tel</a></li>
+			<li><a href="#">Zone</a></li>
+			<li><a href="#">Article</a></li>
+		</ul>
+		<!-- 垂直胶囊式当行菜单 -->
+		<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Photo</a></li>
+			<li><a href="#">Tel</a></li>
+			<li><a href="#">Zone</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					Article<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Java</a></li>
+					<li><a href="#">IOS</a></li>
+					<li><a href="#">Html</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+	
+
+	<script type="text/javascript">
+		$('li').click(function(){
+			switch($(this).parent()[0].className){
+				case 'nav nav-pills':
+					$('.nav-pills li').removeClass('active');
+					break;
+				case 'nav nav-tabs':
+					$('.nav-tabs li').removeClass('active');
+					break;
+				case 'nav nav-pills nav-stacked':
+					$('.nav-stacked li').removeClass('active');
+					break;
+			}
+			// console.log($(this).parent()[0].className);
+			$(this).addClass('active');
+		});
+	</script>
+</body>
+</html>

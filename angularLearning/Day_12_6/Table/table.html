@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- table</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<style>
+		table, th , td {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+		
+	</style>
+</head>
+<body ng-app="myApp"> 
+		<table  ng-controller="myCtrl">
+			<tr style="{{$even?'background: #f1f1f1' :''}}" ng-repeat="x in persons | orderBy : -'age' ">
+				<td>{{ $index + 1 }}</td>
+				<td>{{ x.name }}</td>
+				<td>{{ x.age }}</td>
+				<td>{{ x.location }}</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+					
+					var app = angular.module("myApp",[]);
+					app.controller('myCtrl',function($scope){
+						$scope.persons = [
+							{name:"小毛",age:22,location:"湖北"},
+							{name:"小胡",age:23,location:"安徽"},
+							{name:"小孙",age:24,location:"湖南"},
+							{name:"小虎",age:24,location:"湖南"},
+							{name:"小养",age:24,location:"湖南"},
+							{name:"小很",age:24,location:"湖南"},
+							{name:"小苏",age:24,location:"湖南"},
+							{name:"小里",age:24,location:"湖南"}
+						]
+					});
+				</script>
+		
+</body>
+				
+</html>

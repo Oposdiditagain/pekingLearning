@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- Tooltip</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../bootrap.min.js"></script>
+	<style type="text/css">
+		.container a{
+			margin-right: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="#" title="tooltip" class="tooltip-toggle" data-toggle="tooltip" data-placement="bottom">bottom</a>
+		<a href="#" title="tooltip" class="tooltip-toggle" data-toggle="tooltip" data-placement="left">left</a>
+		<a href="#" title="tooltip" class="tooltip-toggle" data-toggle="tooltip" data-placement="top">top</a>
+		<a href="#" title="tooltip" class="tooltip-toggle" data-toggle="tooltip" data-placement="right">right</a>
+		<br />
+		<button type="button" class="btn btn-primary" data-toggle="tooltip" title="Right" data-placement="right">Right</button>
+		<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</button>
+		<br />
+		这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip"
+            title="show">Tooltip 方法 show
+	    </a>.
+	 
+	    这是一个 <a href="#" class="tooltip-hide" data-toggle="tooltip"
+	            data-placement="left" title="hide">Tooltip 方法 hide
+	    </a>.
+	 
+	    这是一个 <a href="#" class="tooltip-destroy" data-toggle="tooltip"
+	            data-placement="top" title="destroy">Tooltip 方法 destroy
+	    </a>.
+	 
+	    这是一个 <a href="#" class="tooltip-toggle" data-toggle="tooltip"
+	            data-placement="bottom" title="toggle">Tooltip 方法 toggle
+	    </a>.
+	    <br><br><br><br><br><br>
+	    <p class="tooltip-options" >
+	        这是一个 <a href="#" data-toggle="tooltip" title="<h2>'am Header2
+	         </h2>">Tooltip 方法 options
+	        </a>.
+   		</p>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+		
+		$(function () { $('.tooltip-show').tooltip('show');});
+		$(function () { $('.tooltip-hide').tooltip('hide');});
+		$(function () { $('.tooltip-destroy').tooltip('destroy');});
+		$(function () { $('.tooltip-toggle').tooltip('toggle');});
+		$(function () { $(".tooltip-options a").tooltip({html : true });});
+		$(function () {
+			$(".tooltip-show").on('show.bs.tooltip',function(){
+				alert("message");
+			});
+			$(".tooltip-show").on('shown.bs.tooltip',function(){
+				alert("shown");
+			});
+		})
+	</script>
+</body>
+</html>

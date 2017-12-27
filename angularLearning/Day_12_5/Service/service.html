@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Service</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	
+	<div ng-controller="myCtrl">
+			
+		<!-- location服务 返回当前页面的URL   $location.absUrl() -->
+		<p>Url:</p>
+		<h1>{{myUrl}}</h1>
+
+		<!-- $http 请求服务 -->
+		<p>Welcome:</p>
+		<h2>{{myWelcome}}</h2>
+
+		<!-- $timeout -->
+		<h3 ng-init="myHeader='Welcome to Angular~'">{{myHeader}}</h3>
+		<!-- $interval -->
+		<h4>{{theTime}}</h4>
+
+		<!-- 自定义服务 service -->
+		<p>255 的十六进制:</p>
+		<h4>{{ret}}</h4>
+
+		<!-- 自定义服务后，可在控制器，指令，过滤器或其他服务里使用 -->
+		<!-- 自定义服务与自定义过滤器配合使用如下 -->
+		<p>256的十六进制：</p>
+		<h4>{{256 | myFormat}}</h4>
+
+		<!-- 在数组中的应用 -->
+
+		<ul>
+			<li ng-repeat="x in numbers">{{x | myFormat}}</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		// var url = "http://www.runoob.com/try/angularjs/data/sites.php";
+		var url = "welcome.php";
+
+
+		// 自定义服务
+		app.service("hexToBin",function(){
+			this.prase = function(data){
+				return data.toString(16);
+			}
+		});
+
+		// 自定义过滤器
+		app.filter("myFormat",function(hexToBin){
+			return function(x){
+				return hexToBin.prase(x);
+			}		
+		})
+
+		app.controller("myCtrl",function($scope,$location,$http,$timeout,$interval,hexToBin){
+		
+			
+			// $scope.$apply(function(){
+			// 	// apply() 方法可以修改数据
+			// })
+
+			$scope.numbers = [210,100,256];
+
+			$scope.myUrl = $location.absUrl();
+		
+			$http.get(url).then(function(response){
+
+				$scope.myWelcome = response.data;
+
+			});
+
+			$scope.theTime = new Date().toLocaleTimeString();
+			
+			$timeout(function(){
+				$scope.myHeader = "I love u";
+			},2000);
+
+			$interval(function(){
+				$scope.theTime = new Date().toLocaleTimeString();
+			},1000);
+		
+			$scope.ret = hexToBin.prase(255);
+
+
+
+		});
+
+
+		
+
+
+	</script>
+</body>
+</html>

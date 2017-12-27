@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstarp -- scrollspyVertical</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../bootrap.min.js"></script>
+	<style type="text/css">
+		}
+		ul.nav-pills {
+			top: 20px;
+			position: fixed;
+		}
+		div.col-sm-9 div {
+			height: 250px;
+			font-size: 28px;
+		}
+		#section1 {color: #fff; background-color: #1E88E5;}
+		#section2 {color: #fff; background-color: #673ab7;}
+		#section3 {color: #fff; background-color: #ff9800;}
+		#section41 {color: #fff; background-color: #00bcd4;}
+		#section42 {color: #fff; background-color: #009688;}
+	</style>
+</head>
+<body>
+	<div class="container" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+		<div class="row">
+			
+			<div class="col-sm-3" id="myScrollspy">
+				<div class="container-fluid"></div>
+				<div class="container-fluid"></div>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active">
+						<a  href="#section1">Section1</a>
+					</li>
+					<li><a  href="#section2">Section2</a></li>
+					<li><a  href="#section3">Section3</a></li>
+					<li><a  href="#section4">Section4</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a  href="#section41">Section 4-1</a></li>
+							<li><a  href="#section42">Section 4-2</a></li>
+						</ul>
+					</li>
+				</ul>
+					
+			</div>
+			<div class="col-sm-9">
+				<div id="section1" >
+					<h1>Section1</h1>
+					<p>Just Do it</p>
+				</div>
+				<div id="section2">
+					<h1>Section2</h1>
+					<p>Just Do it</p>
+				</div>
+				<div id="section3">
+					<h1>Section3</h1>
+					<p>Just Do it</p>
+				</div>
+				<div id="section4">
+					<h1>Section4</h1>
+					<p>Just Do it</p>
+				</div>
+				<div id="section41">
+					<h1>Section41</h1>
+					<p>Just Do it</p>
+				</div>
+				<div id="section42">
+					<h1>Section42</h1>
+					<p>Just Do it</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

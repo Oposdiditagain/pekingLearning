@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Select</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body>
+	
+		<!-- 在 AngularJS 中我们可以使用 ng-option 指令来创建一个下拉列表，列表项通过对象和数组循环输出 -->
+		<!-- ng-options 与 ng-repeat 的区别 -->
+		<!-- 当 names 为 key-value 形式，可使用 x for (x,y) in objectName 来访问 -->
+		<div ng-app="myApp" ng-controller="optCtrl">
+			<h1>你选择的是:</h1>
+			<select ng-init="selected = persons['小毛']" ng-model="selected" ng-options="x for (x,y) in persons">
+				
+			</select>
+			
+			<h2>来自:{{selected.location}}</h2>
+			<h3>年龄:{{selected.age}}</h3>
+		</div>
+
+		<script type="text/javascript">
+			
+			var app = angular.module('myApp',[]);
+			app.controller('optCtrl',function($scope){
+				// $scope.names = [
+				// 	{name:'小毛',location:'湖北'},
+				// 	{name:'小贝敏欢姐',location:'北方'},
+				// 	{name:'大勇哥',location:'山西'},
+				// 	{name:'烁凯宇坤尧胡哥',location:'东北'}
+				// ]
+
+				$scope.persons ={
+					小毛 : {age:22,location:'湖北'},
+					小贝 : {age:23,location:'石家庄'},
+					大强 : {age:21,location:'陕西'}
+				}
+			});
+		</script>
+</body>
+</html>

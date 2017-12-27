@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Expression</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body>
+	
+	<div ng-app="" ng-init="quality=5;cost=5">
+		<!-- <p>My second expression : {{quality * cost}}</p> -->
+		<p>My second expression :<span ng-bind="quality * cost"></span></p>
+		<div>
+			<p>My first expression : {{ 5 + 5 }}</p>
+
+			<div  data-ng-init="person={firstname:'Jhon',lastname:'Doe'}">
+				<p>Name : {{person.firstname + ' ' + person.lastname}}</p>
+				<p>Name: <span data-ng-bind="person.firstname + ' ' + person.lastname"></span></p>
+			
+				
+			</div>
+			<div  data-ng-init="list=[1,2,3,4,5]">
+			
+					<p> list_1: {{list[0]}}</p>
+					<p>List1:<span data-ng-bind="list[0]"></span></p>
+				</div>
+		</div>
+		
+		
+	</div>
+</body>
+</html>

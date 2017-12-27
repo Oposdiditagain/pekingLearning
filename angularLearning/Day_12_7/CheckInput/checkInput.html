@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- checkInput</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<!-- 
+		$dirty : 表单有填写记录
+		$valid : 字段内容合法
+		$invalid : 字段内容不合法
+		$pristine : 表单没有填写记录 
+	-->
+	<h1>表单验证</h1>
+	<form ng-controller="validateCtrl" name="myForm" novalidate>
+		<p>用户名:
+			<input type="text" name="user" ng-model="user" required>
+			<span style="color:red;" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+			  	<span ng-show="myForm.user.$error.required">用户名是必须的</span>
+			</span>
+		</p>
+
+		<p>邮箱：<br>
+			<input type="email" name="email" ng-model="email" required>
+			<span style="color:red;" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+				<span ng-show="myForm.email.$error.required">邮箱是必须的</span>
+				<span ng-show="myForm.email.$error.email">非法邮箱</span>
+			</span>
+		</p>
+
+		<p>
+			<input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+		</p>
+	</form>
+
+
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+			app.controller('validateCtrl',function($scope){
+				$scope.user = 'Mao Wenjie';
+				$scope.email = "xx@servyou.com";
+			});
+
+	</script>
+</body>
+</html>

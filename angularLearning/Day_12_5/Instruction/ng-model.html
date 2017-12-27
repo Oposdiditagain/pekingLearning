@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Model</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body>
+
+
+	<div ng-app="myApp">
+		<!-- ng-model:指令把元素值(例如输入框中的值)绑定到应用中 -->
+		<div ng-init="firstname='Jhon'">
+			<p>输入:<input type="text" name="name" ng-model="firstname"></p>
+			<p>Input : {{firstname}}</p>
+		</div>
+
+		
+		<div ng-init="quatity=5;cost=5">
+			<p>数量:<input type="text" name="" ng-model="quatity"></p>
+			<p>单价:<input type="text" name="" ng-model="cost"></p>
+		
+			<p>总价:{{ quatity * cost }}</p>
+		</div>
+
+	 	<!-- ng-repeat 重复HTML元素 -->
+	 	<div ng-init="names=['Joe','Mao','Wen','Jie']">
+	 		<p>使用 ng-repeat 来遍历数组</p>
+	 		<ul>
+	 			<li ng-repeat="x in names">
+	 				{{x}}
+	 			</li>
+	 		</ul>
+	 	</div>
+	 	<!-- 创建自定义指令 -->
+	 	<first-directive></first-directive>
+		<div class="first-directive"></div>
+
+	</div>
+
+
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.directive("firstDirective",function(){
+			return {
+				restrict : "EC",     // 默认:"EA" 
+									 // E:<></>
+									 // A:<div xx-directive>
+									 // C:<div class = "xx-directive">
+									 // M: <!-- --> + replace:true 
+				template : "<h1>自定义指令集 first-directive</h1>"
+			};
+		});
+
+	</script>
+</body>
+</html>

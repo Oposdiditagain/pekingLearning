@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- include</title>
+</head>
+<body ng-app="myApp">
+	
+	<!-- 同源包含 [html | php]-->
+	
+	<!-- 跨域包含 -->
+	<!-- 默认情况下， ng-include 指令不允许包含其他域名的文件。 -->
+	<!-- 如果你需要包含其他域名的文件，你需要设置域名访问白名单： -->
+	<div ng-include="'http://c.runoob.com/runoobtest/angular_include.php'"></div>
+
+	<script type="text/javascript">
+		
+		var app = angular.module('myApp',[]);
+			app.config(function($sceDelegateProvider){
+				$sceDelegateProvider.resourceUrlWhitelist([
+					'http://c.runoob.com/runoobtest/**'
+				]);
+			});
+			
+	</script>
+</body>
+</html>

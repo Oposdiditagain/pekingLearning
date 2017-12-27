@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- ng-model</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+
+	<style type="text/css">
+	/*
+		ng-invalid:未通过验证的表单
+		ng-valid:布尔型属性，它指示表单是否通过验证。如果表单当前通过验证，他将为true
+		ng-dirty:布尔值属性，表示用户是否修改了表单。如果为 ture，表示有修改过；false 表示修没有修改过
+		ng-touched:布尔值属性，表示用户是否和控件进行过交互
+		ng-pristine:布尔值属性，表示用户是否修改了表单。如果为ture，表示没有修改过；false表示修改过
+		ng-touched: 控件已失去焦点
+		ng-untouched: 控件未失去焦点
+		ng-pending: 任何为满足$asyncValidators的情况
+
+	*/
+		input.ng-invalid{
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body ng-app="myApp">
+	<!-- 使用ng-model 指令来绑定输入框的值到控制器的属性 -->
+	<div ng-controller="myCtrl">
+		<p>名字:<input type="text" name="" ng-model="name"></p>
+		
+	</div>
+	
+
+	<!-- 双向绑定 -->
+	<div ng-controller="Cctrl">
+		<p>名字:<input ng-model="myName"></p>
+		<h1>你输入了:{{myName}}</h1>
+	</div>
+
+	<!-- 验证邮箱信息，ng-show为真的时候输出错误信息 -->
+	<form name="myForm">			
+		Email:<input type="email" name="myEmail" ng-model="inputText" required="true"> <span ng-show="myForm.myEmail.$error.email">Error Mail Address</span>
+		    <!-- 
+		    	{{myForm.myEmail.$valid}}
+   				{{myForm.myEmail.$dirty}}
+    			{{myForm.myEmail.$touched}} 
+    		-->
+	<p><input type="text" required="true" ng-model="text"></p>
+	</form>
+
+	<!-- ng-model 指令基于它们的状态为HTML元素提供CSS类 -->
+
+
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.name = "Mao wj";
+		});
+
+		app.controller('Cctrl',function($scope){
+			$scope.myName = "Input";
+		})
+	</script>
+</body>
+</html>

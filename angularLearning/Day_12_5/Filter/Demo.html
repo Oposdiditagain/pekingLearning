@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl">
+
+	<div ng-bind="myName  | uppercase"></div> <!--uppercase转换成大写-->
+
+	<div ng-bind="myName  | lowercase"></div> <!--lowercase转换成小写-->
+
+	<div class="" ng-bind="money | currency : '￥'"> </div><!--currency 过滤器将数字格式化为货币格式-->
+
+	<div class="" ng-repeat="v in city | orderBy:'id'">
+		<p ng-bind="v.name"></p>
+	</div><!--orderBy 过滤器根据表达式排列数组-->
+
+	<div class="" ng-repeat="v in city | orderBy:'-id' | filter : ''">
+		<p ng-bind="v.name" style="color:red;"></p>
+	</div><!--orderBy 过滤器根据表达式排列数组   默认正序asc,倒序添加-负号-->
+
+	<!--filter 过滤器根据表达式过滤不包含过滤器中的内容-->
+
+	<!--自定义注入依赖-->
+
+	<div class="" ng-bind="myName | aa" style="color:blue;"> <!--自定义过滤器aa-->
+
+	</div>
+
+</div>
+<script>
+angular.module('myApp',[]).controller('myCtrl',function($scope){
+	$scope.myName="Dhx";
+	$scope.money=100;
+	$scope.city=[
+		{"id":"1","name":"福建"},
+		{"id":"2","name":"广东"},
+		{"id":"5","name":"上海"},
+		{"id":"4","name":"北京"},
+		{"id":"3","name":"四川"}
+	]
+}).filter('aa',function(){ //自定义过滤器，aa为自定义过滤名称 ，val为穿参，split("")将val切割成数组，reverse()将数组反转，join("")将数组变成字符串
+	return function(val){
+		return val.split("").reverse().join("");
+	}
+})
+</script>
+</body>
+</html>

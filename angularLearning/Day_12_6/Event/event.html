@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- event</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="" ng-init="count = 0;mySwitch=true;text='click to hide'">
+	<button ng-click="count = count + 1;mySwitch=!mySwitch;text='click to show'" ng-model="text">{{text}}</button>
+
+	<h2>{{count}}</h2>
+
+	<h3 ng-show="mySwitch">show</h3>
+</body>
+</html>

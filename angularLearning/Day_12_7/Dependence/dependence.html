@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Dependence</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<h1>AngularJS 依赖注入</h1>
+	<p>输入一个数字:<input type="text" ng-model="number"></p>
+	<button ng-click="square()">X<sup>2</sup></button>
+	<h2>结果:{{result}}</h2>
+
+
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+
+		app.value('defaultInput',5);
+
+		app.factory('mathMult',function(){
+			var factory = {};
+
+			factory.mutlify = function(a,b){
+					return a*b;
+			}
+			return factory;
+		});
+			app.service('caculateService',function(mathMult){
+			this.square = function(a){
+					return mathMult.mutlify(a,a);
+			}
+		})
+
+		app.controller('myCtrl',function($scope,caculateService,defaultInput){
+			$scope.number = defaultInput;
+			$scope.result = caculateService.square($scope.number);
+			$scope.square = function(){
+				$scope.result = caculateService.square($scope.number);
+			}
+		});
+	</script>
+</body>
+</html>

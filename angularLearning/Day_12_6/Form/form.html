@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- form</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<!-- ng-switch 单选框 radio-->
+	选择:<form>
+			<input type="radio" ng-model="var" value="dogs">Dogs
+			<input type="radio" ng-model="var" value="tutor">Tutor
+			<input type="radio" ng-model="var" value="cars">Cars
+
+	</form>
+	<div ng-switch="var">
+		<div ng-switch-when="dogs">
+			<h1>This is zone of dogs</h1>
+		</div>
+		<div ng-switch-when="tutor">
+			<h2>TUTOR: ---------------</h2>
+			<h1>This is zone of tutor</h1>
+		</div>
+		<div ng-switch-when="cars">
+			<h2>Cars: ----------------</h2>
+			<h1>This is zone of cars</h1>
+		</div>
+	</div>
+	<p>ng-switch 指令根据单选按钮的选择结果显示或隐藏 HTML 区域。</p>
+
+	<!-- ng-switch 下拉菜单 Select -->
+	<form>
+		<select ng-model="myVar">
+			<option value=""></option>
+			<option value="dogs">dogs</option>
+			<option value="tutor">tutor</option>
+			<option value="cars">cars</option>
+		</select>
+	</form>
+	<div ng-switch="myVar">
+		<div ng-switch-when="dogs">
+			<h1>This is zone of dogs</h1>
+		</div>
+		<div ng-switch-when="tutor">
+			<h2>TUTOR: ---------------</h2>
+			<h1>This is zone of tutor</h1>
+		</div>
+		<div ng-switch-when="cars">
+			<h2>Cars: ----------------</h2>
+			<h1>This is zone of cars</h1>
+		</div>
+	</div>
+
+	<!-- novalidate 属性在应用中不是必须的，但是你需要在 AngularJS 表单中使用，用于重写标准的 HTML5 验证。 -->
+	<div ng-controller="formCtrl">
+		<form novalidate>
+			First name:<br/>
+			<input type="text" ng-model="user.firstname"><br/>
+			Last name:<br/>
+			<input type="text" ng-model="user.lastname"><br/>
+			<button ng-click="reset()">reset</button>
+		</form>
+		<h1>user: {{user}}</h1>
+		<h2>master: {{master}}</h2>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+			app.controller('formCtrl',function($scope){
+				$scope.master = {firstname:'Wenjie',lastname:'Mao'};
+				$scope.reset = function(){
+					$scope.user = angular.copy($scope.master);
+				}
+				$scope.reset();
+			});
+	</script>
+</body>
+</html>

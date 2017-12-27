@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- inputGroup</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../bootrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form role="form">
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">@</span>
+				<input type="text" class="form-control" placeholder="TwitterHandle" name="">
+			</div>
+			<div class="input-group input-group-sm">
+				
+				<input type="text" class="form-control" placeholder="TwitterHandle" name="">
+				<span class="input-group-addon">.00</span>
+			</div>
+			<div class="input-group ">
+				<span class="input-group-addon">$</span>
+				<input type="text" class="form-control" placeholder="TwitterHandle" name="">				
+				<span class="input-group-addon">@</span>
+			</div>
+
+			<!-- 前缀加input -->
+			<div class="input-group">
+				<form role="form">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<input type="radio"  name="">
+						</span>
+						<input type="text" class="form-control">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">
+							<input type="checkbox"  name="">
+						</span>
+						<input type="text" class="form-control">
+					</div>
+				</form>
+			</div>
+			<!-- 前缀加按钮 -->
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-primary">Go</button>
+					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li class="presentation"><a href="#">Java</a></li>
+						<li class="presentation"><a href="#">HTML</a></li>
+						<li class="presentation"><a href="#">Android</a></li>
+					</ul>
+				</span>
+				
+				<input type="text" class="form-control" name="">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Scope</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<!-- 
+		Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
+		Scope 是一个对象，有可用的方法和属性。
+		Scope 可应用在视图和控制器上。 
+
+		View(视图), 即 HTML。
+		Model(模型), 当前视图中可用的数据。
+		Controller(控制器), 即 JavaScript 函数，可以添加或修改属性。
+	-->
+	
+	<div ng-controller="myCtrl">
+		<h1>{{Variable}}</h1>
+	</div>
+
+<!-- ToDo: $scope between View and Contorller -->
+	<div ng-controller="secCtrl">
+		<input type="text" ng-model="myName">
+		<h1>{{greeting}}</h1>
+		<button ng-click="sayHello()">Click</button>
+	</div>
+<!-- ToDo: Scope of Scope -->
+	<div ng-controller="thrCtrl">
+		<ul>
+			<li ng-repeat="x in names">{{x}}</li>
+		</ul>
+	</div>
+	
+
+	<script type="text/javascript">
+		app = angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope){
+			$scope.Variable = "Hey,I can change the '{{Variable}}'";
+		})
+
+		app.controller("secCtrl",function($scope){
+			$scope.myName = "Fgd";
+			$scope.sayHello = function(){
+				$scope.greeting = "How are u " + $scope.myName + '~';
+			}
+		});
+
+		app.controller("thrCtrl",function($scope){
+			$scope.names = ["Fgd","Mwj","Mxy"];
+		})
+	</script>
+</body>
+</html> 

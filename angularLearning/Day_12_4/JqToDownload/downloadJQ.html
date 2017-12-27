@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DownloadJQ</title>
+</head>
+<body>
+	<input type="button" id="btn2" value="ZIP_Download">
+</body>
+	<script type="text/javascript" src="../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$eleBtn2 = $("#btn2");
+		$eleBtn2.click(function(){
+            var $eleForm = $("<form method='get'></form>");
+
+            // $eleForm.attr("action","https://codeload.github.com/douban/douban-client/legacy.zip/master");
+            // $eleForm.attr("action","file:///C:/Users/daixj/Desktop/Day_12_4/scriptJsToDownload/img/me.jpg");
+            $eleForm.attr("action","http://img.ivsky.com/img/bizhi/pre/201711/16/thor_ragnark-011.jpg");
+            
+
+            $(document.body).append($eleForm);
+
+            //提交表单，实现下载
+            $eleForm.submit();
+        });
+	</script>
+</html>

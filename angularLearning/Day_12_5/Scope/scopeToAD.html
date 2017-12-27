@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Scope to AD</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		<ul>
+			<li ng-repeat="x in names track by $index">{{x}}.{{lastname}}<button ng-click="del(index)">删除</button></li>
+		</ul>
+		<p>添加成员:<input type="text" ng-model="name" placeholder="请输入姓名"></p>
+		<button ng-click="add(name)">添加</button>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller('myCtrl',function($scope,$rootScope){;
+
+			// Privilege : $scope > $rootScope
+
+			$scope.names = ["Fgd","Mwj","Ldq","Hgu"];
+			$scope.lastname = "Jie";
+			// $rootScope.name = 'hh';
+
+			// console.log($rootScope);
+			// console.log($scope)
+
+			$scope.add = function(name){
+				$scope.names.push($scope.name);
+			}
+
+			$scope.del = function(index){
+				$scope.names.splice(index,1);
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap -- dynamicNav</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../bootrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h2>动态标签</h2>
+		<p>提示： data-toggle="tab"/data-toggle="pill"</p>
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#home" data-toggle="tab" href="#home">首页</a>
+			</li>
+			<li><a href="#menu1" data-toggle="tab">菜单1</a></li>
+			<li><a href="#menu2" data-toggle="tab">菜单2</a></li>
+			<li><a href="#menu3" data-toggle="tab">菜单3</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+				<h3>首页</h3>
+				<p>My first nav in Bootstrap</p>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+				<h3>菜单1</h3>
+				<p>菜单1的内容</p>
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				<h3>菜单2</h3>
+				<p>菜单2的内容</p>
+			</div>
+			<div id="menu3" class="tab-pane fade">
+				<h3>菜单3</h3>
+				<p>菜单3的内容</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Dom</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app=""> 
+	<!-- ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。 -->
+	<div  ng-init="mySwitch=true">
+		<p><button ng-disabled="mySwitch">Click</button></p>
+		<p><input type="checkbox" ng-model="mySwitch">按钮</p>
+
+		<p>{{ mySwitch }}</p>
+	</div>
+	<!-- ng-show 指令显示或隐藏一个HTML或DOM元素 -->
+	<!-- ng-hide 指令隐藏或显示一个HTML或DOM元素 -->
+	<p ng-show="true">我是可见的</p>
+	<p ng-show="false">我是不可见的</p>
+	<!-- ng-show 根据表达式或布尔类型变量来显示或隐藏元素 -->
+	<p ng-show="mySwitch">ng-show --我是根据表达式决定是否可见的</p>
+	<p ng-hide="mySwitch">ng-hide --我是根据表达式决定是否可见的</p>
+	
+</body>
+</html>
+

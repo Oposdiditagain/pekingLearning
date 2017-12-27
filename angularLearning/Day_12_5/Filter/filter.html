@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular -- Filter</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<!-- ToDo: 过滤 -->
+	<div ng-controller="myCtrl">
+		<p>输入子集</p>
+		<input type="text" ng-model="test">
+		<ul>
+			<li ng-repeat="x in persons | filter:test | orderBy:'country'">
+				{{ (x.name | uppercase )+ '.' + x.country}}
+			</li>
+		</ul>		
+	</div>
+
+	<!-- ToDo:自定义过滤器 -->
+	<div ng-controller="secCtrl">
+		<!-- 过滤器自增加依赖 reverse:2:1:3:'str' -->
+		<p>{{msg | reverse:2:1:3:'str'}}</p>   
+
+		<!-- date 在js 中的用法 -->
+		<h2>{{time}}</h2>   
+	</div>
+	
+	<!-- date 在html中用法：{{ date_expression | date : format : timezone}} -->
+	<span>{{1288323623006 | date:'medium'}}</span><br>
+    <span>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span><br>
+    <span>{{'1288323623006' | date:'MM/dd/yyyy @ h:mma'}}</span><br>
+    <span>{{'1288323623006' | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
+
+	
+
+	<script type="text/javascript" src="filterName.js"></script>
+</body>
+</html>
