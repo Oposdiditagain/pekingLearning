@@ -1,0 +1,35 @@
+{
+	"name": "expressdemo2",
+	"version": "1.0",
+	"author": "",
+	"description": "",
+	"company": "",
+	"copyright": "",
+	"website": "",
+	"package": null,
+	"startup": "expressdemo2.js",
+	"execute": null,
+	"extract": false,
+	"output": "expressdemo2.jx",
+	"files": [
+		"Cookie\\cookie.js",
+		"expressDemo.js",
+		"expressdemo2.js",
+		"expressRoute\\routeGET\\route.js",
+		"expressRoute\\routePOST\\routePost.js",
+		"expressStatic.js",
+		"Upload\\UploadPost\\server.js"
+	],
+	"assets": [
+		"expressRoute\\routeGET\\index.html",
+		"expressRoute\\routeGET\\public\\index.html",
+		"expressRoute\\routePOST\\public\\index.html",
+		"public\\image\\Koala.jpg",
+		"Upload\\UploadPost\\public\\index.html",
+		"Upload\\UploadPost\\public\\Koala.jpg",
+		"Upload\\UploadPost\\public\\sce.jpg"
+	],
+	"preInstall": null,
+	"library": true,
+	"fs_reach_sources": true
+}
