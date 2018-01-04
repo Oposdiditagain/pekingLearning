@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React -- RefControlDom</title>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var MyForm = React.createClass({
+			submitHandler: function(event){
+				event.preventDefault();
+				console.log(this.refs);
+				var helloTo = this.refs.hello.value;
+				console.log(helloTo);
+			},
+			render: function() {
+				return (
+					<form onSubmit={this.submitHandler}>
+					<input ref="hello" type="text" defaultValue="Hello World" />
+					<br />
+					<button type="submit">Speak</button>
+					</form>
+				);
+			}
+		});
+		ReactDOM.render(
+			<MyForm />,
+			document.querySelector('#example')
+		);
+	</script>
+</body>
+</html>
