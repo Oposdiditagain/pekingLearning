@@ -1,0 +1,6 @@
+React 服务器端渲染，要慎重考虑如何将组建的state 传递到客户端，以充分利用服务端渲染的优势。需要保证同一个Props 传递到组件中，总会输出相同的初始渲染结果。
+
+React 服务器组件生命周期： 一旦渲染为字符串，组件就会只调用位于render之前的组件生命周期方法。需要指出，componentDidMount 和 componentWillUnMount 不会再服务器端宣传过程中被调用，而 componentWillMount 在两种渲染方式下均有效。 在componentWillMounut 内注册的所有事件监听器及定时器都可能潜在地导致服务端内存泄漏。 最佳的办法就是只在 componentDidMount 内部创建事件监听器及定时器，然后再componentWillMount内清除这两者。
+
+两种渲染办法： React.renderToString 只返回一个字符串，是一个快速的同步函数。
+	       React.renderToStaticMarkup
